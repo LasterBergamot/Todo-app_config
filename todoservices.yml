@@ -2,7 +2,7 @@ spring:
     profiles:
       active: prod
     application:
-      name: todo-services
+      name: todo-services # the app will appear with this name in Eureka
     data:
       mongodb:
         #      host: mongodb # by default, mongodb is referred as localhost, but while it's in a container, localhost won't point to it, so the container's name should be given here
