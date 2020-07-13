@@ -2,7 +2,7 @@ spring:
     profiles:
       active: prod
     application:
-      name: user-services
+      name: util-services
     data:
       mongodb:
         #      host: mongodb # by default, mongodb is referred as localhost, but while it's in a container, localhost won't point to it, so the container's name should be given here
@@ -15,7 +15,7 @@ logging:
   pattern:
     console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
     file: "%d %p %c{1.} [%t] %m%n"
-  file: ./logs/user-services_logs/
+  file: ./logs/util-services_logs/
 
 server:
-    port: 8201
+    port: 8301
