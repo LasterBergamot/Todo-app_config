@@ -13,7 +13,7 @@ logging:
     org.springframework: INFO
     com.todoapp.services.user.userservices: DEBUG
   pattern:
-    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger - %msg%n"
     file: "%d %p %c{1.} [%t] %m%n"
   file: ./logs/user-services_logs/
 
