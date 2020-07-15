@@ -20,7 +20,7 @@ spring:
   
 logging:
   level:
-    org.springframework: INFO
+    org.springframework: DEBUG
     com.todoapp.webapp.todoappwebapp: DEBUG
   pattern:
     console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger - %msg%n"
