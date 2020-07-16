@@ -17,5 +17,21 @@ logging:
     file: "%d %p %c{1.} [%t] %m%n"
   file: ./logs/todo-app-webapp_logs/
 
+resilience4j.circuitbreaker:
+  instances:
+      backendA:
+          registerHealthIndicator: true
+          slidingWindowSize: 100
+      backendB:
+          registerHealthIndicator: true
+          slidingWindowSize: 10
+          permittedNumberOfCallsInHalfOpenState: 3
+          slidingWindowType: TIME_BASED
+          minimumNumberOfCalls: 20
+          waitDurationInOpenState: 50s
+          failureRateThreshold: 50
+          eventConsumerBufferSize: 10
+          recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
+
 server:
     port: 8080
