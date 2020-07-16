@@ -7,7 +7,14 @@ spring:
     mongodb:
       #      host: mongodb # by default, mongodb is referred as localhost, but while it's in a container, localhost won't point to it, so the container's name should be given here
       host: localhost # use this when the app is used without Docker
-  
+  cloud:
+    gateway:
+      routes:
+      - id: todoModule
+        uri: http://localhost:8101/
+        predicates:
+        - Path=/todo/**
+
 logging:
   level:
     org.springframework: INFO
