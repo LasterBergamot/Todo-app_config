@@ -5,8 +5,7 @@ spring:
     gateway:
       routes:
         - id: todoModule
-          #uri: http://localhost:8101/
-          uri: http://todo-services/
+          uri: http://localhost:8101/
           predicates:
             - Path=/todo/**
         - id: userModule
