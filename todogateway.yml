@@ -1,6 +1,17 @@
 spring:
   application:
     name: todo-gateway # the app will appear with this name in Eureka
+  cloud:
+    gateway:
+      routes:
+        - id: todoModule
+          uri: http://localhost:8101/
+          predicates:
+            - Path=/todo/**
+        - id: userModule
+          uri: http://localhost:8201/
+          predicates:
+            - Path=/user/**
 
 server:
     port: 8080
